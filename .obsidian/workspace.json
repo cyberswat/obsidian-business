@@ -35,7 +35,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/Obsidian EMT/Obsidian EMT Charter.md",
+                "file": "notes/obsidian/plugins/Tasks.md",
                 "mode": "source",
                 "source": false
               }
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/Obsidian EMT/Obsidian EMT Charter.md",
+                "file": "notes/obsidian/plugins/Tasks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/Obsidian EMT/Obsidian EMT Charter.md",
+                "file": "notes/obsidian/plugins/Tasks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,16 +148,36 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/Obsidian EMT/Obsidian EMT Charter.md"
+                "file": "notes/obsidian/plugins/Tasks.md"
+              }
+            }
+          },
+          {
+            "id": "4221b0f33bcb8310",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
+            }
+          },
+          {
+            "id": "98bc30d86e27a661",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "notes/obsidian/plugins/Tasks.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -172,11 +192,11 @@
   },
   "active": "495f48518c2b494a",
   "lastOpenFiles": [
-    "Untitled.md",
-    "projects/Obsidian EMT/Obsidian EMT Charter.md",
-    "Untitled 1.md",
-    "notes/obsidian/plugins/Properties View.md",
     "atlas/maps/Obsidian MOC.md",
+    "notes/obsidian/plugins/Properties View.md",
+    "projects/Obsidian EMT/Obsidian EMT Charter.md",
+    "Untitled.md",
+    "Untitled 1.md",
     "atlas/Home.md",
     "atlas/maps/Tasks MOC.md",
     "extras/images/people/person.png",
