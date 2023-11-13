@@ -1,22 +1,3 @@
 .tmp.driveupload
 # ignore all markdown files by default.
 *.md
-
-# initial markdown files to explain how to use this system.
-./projects/Obsidian EMT/Obsidian EMT Charter.md
-./notes/obsidian/plugins/Templater.md
-./notes/obsidian/plugins/Properties View.md
-./notes/obsidian/plugins/Homepage.md
-./notes/obsidian/plugins/Dataview.md
-./notes/obsidian/plugins/Tasks.md
-./people/Kevin Bridges.md
-./atlas/maps/Obsidian MOC.md
-./atlas/maps/Projects MOC.md
-./atlas/maps/Tasks MOC.md
-./atlas/maps/test MOC.md
-./atlas/maps/People MOC.md
-./atlas/Home.md
-./extras/templates/Map.md
-./extras/templates/Obsidian Plugin.md
-./extras/templates/Project Charter.md
-./extras/templates/Person.md

@@ -14,8 +14,7 @@ weight: 0
 ---
 ⬆️ [[People MOC]] ⬆️
 - [ ] #setup Update file properties.
-- [ ] #setup Add an image for Kevin in the `extras/images/people` folder or remove the default.
-![300](person.png)
+![300](kevin-bridges.jpg)
 ***
 ### Inbox
 ```tasks

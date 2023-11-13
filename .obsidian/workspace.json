@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "people/Zaw Win.md",
+                "file": "people/Kevin Bridges.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "people/Zaw Win.md",
+                "file": "people/Kevin Bridges.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "people/Zaw Win.md",
+                "file": "people/Kevin Bridges.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "people/Zaw Win.md"
+                "file": "people/Kevin Bridges.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "people/Zaw Win.md"
+                "file": "people/Kevin Bridges.md"
               }
             }
           }
@@ -154,7 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 427.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,11 +167,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8a638eb0d90ffc30",
+  "active": "13345a709e3b0f3a",
   "lastOpenFiles": [
+    "extras/images/people/kevin-bridges.jpg",
     "people/Zaw Win.md",
+    "people/Kevin Bridges.md",
     "Untitled 1.md",
-    "people/Zaw Win.md",
     "atlas/maps/test MOC.md",
     "extras/templates/Map.md",
     "extras/templates/Person.md",
@@ -186,7 +187,6 @@
     "atlas/maps/Tasks MOC.md",
     "notes/obsidian/plugins/Homepage.md",
     "atlas/Home.md",
-    "people/Kevin Bridges.md",
     "extras/images/people/person.png",
     "extras/images/people",
     "extras/images",
