@@ -1,28 +1,28 @@
 <%*
   let title = tp.file.title
   if (title.startsWith("Untitled")) {
-    title = await tp.system.prompt("Title");
+    title = await tp.system.prompt("What is this person's Full Name?");
     await tp.file.rename(`${title}`);
     await tp.file.move("/people/" + title)
   }
+  let company = await tp.system.prompt("What company is this person with?");
+  company ??= '';
+  let team = await tp.system.prompt("What team is this person on?");
+  team ??= '';
 %>---
-address:
-birthday:
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
-company:
+company: <% company.replace(/['"]+/g, '') %>
 description: "A note that describes <%* tR += title %>"
-email:
 map: "[[People MOC]]"
-phone:
-team:
+team: <% team.replace(/['"]+/g, '') %>
 tags: 
  - " <%* tR += "#" %>people/<% title.replace(/ /g, '') %>"
 weight: 0
 ---
-⬆️ [[People MOC]] ⬆️
-- [ <%* tR += "] #" %>setup Update file properties.
-- [ <%* tR += "] #" %>setup Add an image for <% title.substring(0, title.indexOf(' ')) %> in the `extras/images/people` folder or remove the default.
 ![300](person.png)
+# Tasks
+- [ <%* tR += "] #" %>people/<% title.replace(/ /g, '') %> Add an image in the `extras/images/people` folder and reference it here.
+- [ <%* tR += "] #" %>people/<% title.replace(/ /g, '') %> Setup a recurring meeting to chat.
 ***
 ### Inbox
 ```tasks
@@ -30,34 +30,6 @@ not done
 tags include <%* tR += "#" %>people/<% title.replace(/ /g, '') %> 
 no due date
 limit 10
-```
-***
-- [ <%* tR += "] #" %>setup Add a todoist project.
-```button
-name Todoist <%* tR += `${title}` %>
-type link
-action https://todoist.com/app/projects/active
-```
-```todoist
-{
-"name": "Overdue",
-"filter": "overdue & #<%* tR += `${title}` %>",
-"group": false
-}
-```
-```todoist
-{
-"name": "Today",
-"filter": "today & #<%* tR += `${title}` %>",
-"group": false
-}
-```
-```todoist
-{
-"name": "Upcoming",
-"filter": "(!today & !overdue) & #<%* tR += `${title}` %>",
-"group": false
-}
 ```
 ***
  ```dataview 
