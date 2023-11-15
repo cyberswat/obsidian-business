@@ -1,4 +1,6 @@
 .tmp.driveupload
 *.md
 *.jpg
+*.jpeg
+*.png
 obsidian/workspace.json
