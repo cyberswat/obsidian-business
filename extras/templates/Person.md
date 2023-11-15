@@ -9,12 +9,15 @@
   company ??= '';
   let team = await tp.system.prompt("What team is this person on?");
   team ??= '';
+  let location = await tp.system.prompt("Where is this person located?");
+  location ??= '';
 %>---
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
 company: <% company.replace(/['"]+/g, '') %>
 description: "A note that describes <%* tR += title %>"
 map: "[[People MOC]]"
 team: <% team.replace(/['"]+/g, '') %>
+location: <% location.replace(/['"]+/g, '') %>
 tags: 
  - " <%* tR += "#" %>people/<% title.replace(/ /g, '') %>"
 weight: 0
