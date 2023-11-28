@@ -12,3 +12,9 @@ tags:
 TABLE team, company from #people   
 sort company, team, weight, file.name ASC
 ```
+# 🗺️ People Tasks 🗺️
+```tasks
+not done
+group by path
+tags include people
+```
