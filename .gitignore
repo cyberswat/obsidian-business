@@ -3,5 +3,5 @@
 *.jpg
 *.jpeg
 *.png
-obsidian/workspace.json
+.obsidian/workspace.json
 .DS_Store
