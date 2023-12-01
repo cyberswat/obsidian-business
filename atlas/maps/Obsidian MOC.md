@@ -16,7 +16,7 @@ I've documented each plugin that has been enabled to create this system.
 
 ```dataview 
 TABLE description from #obsidian/plugin  
-sort weight, file.name ASC
+sort weight DESC, file.name ASC
 ```
 ## 🔌Concepts🔌
 

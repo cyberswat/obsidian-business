@@ -1,44 +1,22 @@
 <%*
-let title = tp.file.title
-if (title.startsWith("Untitled")) {
-  title = await tp.system.prompt("Title");
-  title = title.replace(/[^\w-]/g, '') + " MOC"
-  
-  let filename = "/atlas/maps/" + title + ".md"
-  let fileExists = await tp.file.exists(filename);
-  
-  while (fileExists) {
-    title = await tp.system.prompt(filename + " already exists, try another.");
-    title = title.replace(/[^\w-]/g, '') + " MOC"
-    filename = "/atlas/maps/" +  title + ".md"
-    fileExists = await tp.file.exists(filename);
-  }
 
-  await tp.file.rename(`${title}`);
-  await tp.file.move("/atlas/maps/" + title)
-}
+let title = await tp.user.filename(tp, "What is the title for this map?", "/atlas/maps/${output} MOC");
 
-let date = tp.file.creation_date("YYYY-MM-DD")
+let description = await tp.user.property_text(tp, "Write an optional description of this Map's metadata.");
 
-let description = await tp.system.prompt("Provide a short metadata description.");
-description = description.replace(/["]+/g, '\\"')
+let tags = await tp.user.property_tags(tp, "Do you have any tags you would like to add to this Note?", title);
 
-let tags = "map/" + title.replace(/[^\w-\/]/g, '')
-tags = await tp.system.prompt("List tags delineated by spaces. You can use Letters, Numbers, Underscore (_), Hyphen (-), and Forward slash (/) for Nested tags.", tags);
-tags = tags.replace(/[^\w\s-\/]/g, '')
-
-let query = "dataview \nTABLE team, company from #projects \nsort company, team, weight, file.name ASC"
-query = await tp.system.prompt("Query time. <a href=foo>foo</a>", query, false, true);
+let weight = await tp.user.property_number(tp, "Enter a weight if you would like to increase it from 0.", 0);
 
 %>---
-create: <% date %>
-description: "<% description %>"
+create: <% tp.file.creation_date("YYYY-MM-DD") %>
+description: <% description %>
 atlas: "[[Home]]"
-weight: 0
-tags:
-  - <% tags %>
+tags: <% tags %>
+weight: <% weight %>
 ---
 # 🗺️ <% title %> 🗺️
+<% tp.file.cursor() %>
 ```dataview 
 TABLE team, company from #projects   
 sort company, team, weight, file.name ASC

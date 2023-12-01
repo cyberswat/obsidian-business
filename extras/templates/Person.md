@@ -1,58 +1,33 @@
 <%*
-let title = tp.file.title;
-if (title.startsWith("Untitled")) {
-  title = await tp.system.prompt("What is this person's Full Name?");
 
-  // Check if the file already exists
-  let filePath = "/people/" + title + ".md";
-  let fileExists = await tp.file.exists(filePath);
+let title = await tp.user.filename(tp, "What is this person's Full Name?", "/people/${output}");
 
-  if (fileExists) {
-    alert("A file with this name already exists.");
-    return;
-  } else {
-    await tp.file.rename(title);
-    await tp.file.move(filePath);
-  }
-}
-let company = await tp.system.prompt("What company is this person with?");
-company ??= '';
-let team = await tp.system.prompt("What team is this person on?");
-team ??= '';
-let location = await tp.system.prompt("Where is this person located?");
-location ??= '';
+let company = await tp.user.property_text(tp, "What company is this person with?");
 
-let dateString = tp.file.creation_date("YYYY-MM-DD");
-let date = new Date(dateString);
+let team = await tp.user.property_text(tp, "What team is this person on?");
 
-// Add two weeks (14 days) to the date
-date.setDate(date.getDate() + 14);
+let location = await tp.user.property_text(tp, "Where is this person located?");
 
-// Formatting the new date back to "YYYY-MM-DD" format
-let year = date.getFullYear();
-let month = date.getMonth() + 1; // getMonth() is zero-based
-let day = date.getDate();
+let tags = await tp.user.property_tags(tp, "Do you have any tags you would like to add to this Note?", "people/" + title);
 
-// Ensure the month and day are in two-digit format
-month = month < 10 ? '0' + month : month;
-day = day < 10 ? '0' + day : day;
+let weight = await tp.user.property_number(tp, "Enter a weight if you would like to increase it from 0.", 0);
 
-let newDateString = `${year}-${month}-${day}`;
+let newDateString = tp.user.date_change(tp.file.creation_date("YYYY-MM-DD"), 14);
+
 %>---
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
-company: <% company.replace(/['"]+/g, '') %>
+company: <% company %>
 description: "A note that describes <%* tR += title %>"
 map: "[[People MOC]]"
-team: <% team.replace(/['"]+/g, '') %>
-location: <% location.replace(/['"]+/g, '') %>
-tags: 
- - " <%* tR += "#" %>people/<% title.replace(/ /g, '') %>"
-weight: 0
+team: <% team %>
+location: <% location %>
+tags: <% tags %>
+weight: <% weight %>
 ---
 ![300](person.png)
 # Tasks
-- [ <%* tR += "] #" %>people/<% title.replace(/ /g, '') %> Add an image in the `extras/images/people` folder and reference it here. 📅 <% newDateString %>
-- [ <%* tR += "] #" %>people/<% title.replace(/ /g, '') %> Setup a recurring meeting to chat. 📅 <% newDateString %>
+- [ <%* tR += "] #" %><% tp.user.tag("people/" + title) %> Add an image in the `extras/images/people` folder and reference it here. 📅 <% newDateString %>
+- [ <%* tR += "] #" %><% tp.user.tag("people/" + title) %>  Setup a recurring meeting to chat. 📅 <% newDateString %>
 ***
 ### Inbox
 ```tasks

@@ -1,6 +1,6 @@
 ---
 date: 2023-09-28
-description: ""
+description: This is a map of Projects.
 atlas: "[[Home]]"
 weight: 0
 tags:

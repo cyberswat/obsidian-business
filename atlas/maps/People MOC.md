@@ -10,7 +10,7 @@ tags:
 
 ```dataview 
 TABLE team, company from #people   
-sort company, team, weight, file.name ASC
+sort file.name ASC, weight DESC
 ```
 # 🗺️ People Tasks 🗺️
 ```tasks

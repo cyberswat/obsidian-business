@@ -1,19 +1,19 @@
 <%*
-  let title = tp.file.title
-  if (title.startsWith("Untitled")) {
-    title = await tp.system.prompt("Title");
-    await tp.file.rename(`${title}`);
-    await tp.file.move("/projects/" + title + "/" + title + " Charter")
-  } 
-  let description = await tp.system.prompt("Provide a short metadata description.");
+let title = await tp.user.filename(tp, "What is this Charter's Title?", "/projects/${output}/${output} Charter");
+
+let description = await tp.user.property_text(tp, "Write an optional description of this Project Charter's metadata.");
+
+let tags = await tp.user.property_tags(tp, "Do you have any tags you would like to add to this Note?", "projects/" + title);
+
+let weight = await tp.user.property_number(tp, "Enter a weight if you would like to increase it from 0.", 0);
+
 %>---
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
-description: "<% description.replace(/['"]+/g, '') %>"
-name: "<%* tR += title %>"
+description: <% description %>
+name: <% title %>
 map: "[[Projects MOC]]"
-tags: 
- - " <%* tR += "#" %>projects/<% title.replace(/ /g, '') %>"
-weight: 0
+tags: <% tags %>
+weight: <% weight %>
 ---
 # <% title %>
 
