@@ -13,7 +13,7 @@ description: This is a homepage that surfaces recent activity and navigation map
 ```dataview
 Table file.etags AS Tags, description AS Description
 FROM ""
-WHERE file.cday = date("today")
+WHERE file.cday >= date("today") - dur("week")
 SORT file.ctime asc
 ```
 ***
@@ -24,6 +24,16 @@ TABLE
 file.etags AS Tags, description AS Description 
 FROM "" 
 WHERE file.mday = date("today") 
+SORT file.mtime asc
+```
+***
+## Files modified in the last week
+[⬆️](Home.md#🏠%20Home%20🏠)
+```dataview
+TABLE 
+file.etags AS Tags, description AS Description 
+FROM "" 
+WHERE file.mday >= date("today") - dur(1 week) 
 SORT file.mtime asc
 ```
 ***
